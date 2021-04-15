@@ -1,38 +1,23 @@
 import React from "react";
 
+export const GameCard = (data, loading) => {
+	// console.log(data.id);
 
-
-export const GameCard = ( data , loading) => {
-
-    console.log(data.id)
-  
-    return(
-        <div>
-        {
-            loading ? (
-
-                <div>
-                    Loading...
-                </div>
-            )
-            :
-            (
-
-                <div className="row">
-                    <div className="card-columns justify-content-center text-center">
-                        <div className="card">
-                            <h5 className="card-title">{data.title}</h5>
-                            <img src={data.thumbnail} 
-                            alt={data.title} className="card-img" />
-                            <p className="card-text">{data.short_description}</p>
-                            <p className=" card-footer">{data.genre}</p>
-                        </div>
-                    </div>
-                </div>
-
-            )
-
-        }
-    </div>
-    )
+	return (
+		<>
+			{
+				<div className="card w-25 text-center m-1 border-dark shadow">
+					<h5 className="card-title p-1">{data.title}</h5>
+					<img src={data.thumbnail} alt={data.title} className="card-img shadow" />
+					<p className="card-text p-3">{data.short_description}</p>
+					<p className=" card-footer text-baseline"
+                        style={{height:"10%"}}
+                    
+                    >
+                        {data.genre}
+                    </p>
+				</div>
+			}
+		</>
+	);
 };

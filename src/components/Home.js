@@ -1,37 +1,25 @@
-import React from 'react'
-import { useFetch } from '../hooks/useFetch';
+import React from "react";
+import { useFetch } from "../hooks/useFetch";
 
-import { GameCard } from './GameCard';
+import { GameCard } from "./GameCard";
 
 export const Home = () => {
+	const url =
+		"https://www.freetogame.com/api/games";
 
+	const { data, loading } = useFetch(url);
 
-    const url = 'https://www.freetogame.com/api/games?platform=browser&category=mmorpg&sort-by=release-date';
-
-    const {data , loading } = useFetch(url);
-
-    return (
-        <div className="animate__animated animate__fadeIn">
-            <h1>Home</h1>
-            {
-
-                loading ?( 
-
-                <span>Esperando data</span>
-                )
-                :
-                
-                (data.map ( juego =>(
-                    
-                    <GameCard key={juego.id}{...juego}
-                    
-                    loading = {loading}
-                    data = {juego} 
-                     />)
-                     
-                ))
-            }
-        </div>
-
-    )
-}
+	return (
+		<div className="animate__animated animate__fadeIn">
+			<div className="container d-flex flex-wrap justify-content-around">
+				{loading ? (
+					<span>Loading...</span>
+				) : (
+					data.map((juego) => (
+						<GameCard key={juego.id} {...juego} loading={loading} data={juego} />
+					))
+				)}
+			</div>
+		</div>
+	);
+};
