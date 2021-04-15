@@ -2,10 +2,10 @@ import React from "react";
 
 
 
-export const GameCard = ( {data} , loading) => {
+export const GameCard = ( data , loading) => {
 
-    //console.log(data)
-    // console.log(data.title) uncomment to crash (gg)
+    console.log(data.id)
+  
     return(
         <div>
         {
