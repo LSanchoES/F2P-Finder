@@ -1,65 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
+import { tags } from "../data/tags";
 import { useFetch } from "../hooks/useFetch";
 import { GameCardCategory } from "./GameCardCategory";
 
 export const Genres = () => {
-	const tags = [
-		"mmorpg",
-		"shooter",
-		"strategy",
-		"moba",
-		"racing",
-		"sports",
-		"social",
-		"sandbox",
-		"open-world",
-		"survival",
-		"pvp",
-		"pve",
-		"pixel",
-		"voxel",
-		"zombie",
-		"turn-based",
-		"first-person",
-		"third-Person",
-		"top-down",
-		"tank",
-		"space",
-		"sailing",
-		"side-scroller",
-		"superhero",
-		"permadeath",
-		"card",
-		"battle-royale",
-		"mmo",
-		"mmofps",
-		"mmotps",
-		"3d",
-		"2d",
-		"anime",
-		"fantasy",
-		"sci-fi",
-		"fighting",
-		"action-rpg",
-		"action",
-		"military",
-		"martial-arts",
-		"flight",
-		"low-spec",
-		"tower-defense",
-		"horror",
-		"mmorts",
-	];
+	
+    //TODO: Hacer funcionar este kilimbo... El selector no cambia cuando lo eliges,
+    //No estan enlazados los tags al cambio de la url ni se si se debe hacer asi lel
 
 	const url = "https://www.freetogame.com/api/games?category=shooter";
 	const { data, loading } = useFetch(url);
+    
+	// loading ? console.log("loading") : console.log(data[1].genre);
+    
+    const [state, setstate] = useState('seleccion')
 
-	loading ? console.log("loading") : console.log(data[1].genre);
-
+    const handleOnChange = () => {
+        setstate(tags)
+    }
 	return (
 		<div className="animate__animated animate__fadeIn">
 			<h1>Game Genres</h1>
-            <select value={tags} className="form-select m-4" aria-label="Default select">
+            <select value='seleccion' className="form-select m-4 p-1 text-center" aria-label="Default select">
+            {tags.map( tag =>
+                <option onChange={handleOnChange} value={tag}>{tag}</option>
+                )}{/* 
 				<option value="0">Search a genre</option>
 				<option value="1">MMO</option>
 				<option value="2">MMORPG</option>
@@ -97,7 +62,7 @@ export const Genres = () => {
 				<option value="34">Sailing</option>
 				<option value="35">Side Scroller</option>
 				<option value="36">Superhero</option>
-				<option value="37">Permadeath</option>
+				<option value="37">Permadeath</option> */}
 			</select>
 
 			<div className="animate__animated animate__fadeIn">
