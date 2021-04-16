@@ -45,5 +45,14 @@ body{
     text-decoration: none;
 }
 .load{
+    font-weight: bold;
     color: #f25f4c;  
+    animation: mymove 5s infinite;
 }
+@keyframes mymove {
+    0%   {color: #f25f4c;}
+    25%  {color: #f25f4cbb;}
+    50%  {color: #f25f4c46;}
+    75%  {color: #f25f4c94;}
+    100% {color: #f25f4cc5;}
+  }
