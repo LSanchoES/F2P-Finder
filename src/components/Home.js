@@ -13,7 +13,7 @@ export const Home = () => {
 		<div className="animate__animated animate__fadeIn ">
 			<div className="container d-flex flex-wrap justify-content-around">
 				{loading ? (
-					<span>Loading...</span>
+					<span className="load">Loading... ACTIVA LA EXTENSION CORS DE GOOGLE CHROME!</span>
 				) : (
 					data.map((juego) => (
 						<GameCard key={juego.id} {...juego} loading={loading} data={juego} />
