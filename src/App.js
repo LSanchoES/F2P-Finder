@@ -1,4 +1,5 @@
 import React from 'react'
+import { Foot } from './components/Foot'
 import { Routes } from './routers/Routes'
 
 const App = () => {
@@ -9,6 +10,7 @@ const App = () => {
     <div>
 
       <Routes />
+      <Foot />
 
       
     </div>

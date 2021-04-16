@@ -1,0 +1,46 @@
+body{
+    background-color: #0f0e17;
+}
+
+.navbar{
+    border-bottom: 3px solid #fffffe;
+    background: #0f0e17;
+}
+.nav-item{
+    color: #ff8906 !important;
+    font-weight: bold;
+
+
+}
+.nav-item:nth-child(1){
+    border-right: 2px solid #fffffe50;
+}
+.card{
+    background: #fffffe;
+    border: 3px solid #ff8906;
+    box-shadow: 2px 1px 6px #fffffe42;
+    color: black;
+}
+
+.card-footer{
+
+    color: #ff8906 ;
+
+    text-align: baseline;
+    justify-content: center;
+    background: #fffffe;
+    max-height: 20px;
+    padding: 20px;
+}
+.form-select{
+    border-radius: 12px;
+    
+}
+.foot-barra{
+    border-top: 3px solid #fffffe ;
+    text-decoration: none;
+}
+.foot{
+    color: #f25f4c;
+    text-decoration: none;
+}

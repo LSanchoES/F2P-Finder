@@ -3,7 +3,7 @@ import {  NavLink } from 'react-router-dom'
 
 export const Navbar = () => {
     return (
-        <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+        <nav className="navbar navbar-expand navbar">
 
 
             <div className="navbar-collapse">
@@ -15,7 +15,7 @@ export const Navbar = () => {
                         exact
                         to="/home"
                     >
-                        Home
+                        All Games
                     </NavLink>
                     <NavLink 
                         activeClassName="active"

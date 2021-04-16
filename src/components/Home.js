@@ -10,7 +10,7 @@ export const Home = () => {
 	const { data, loading } = useFetch(url);
 
 	return (
-		<div className="animate__animated animate__fadeIn">
+		<div className="animate__animated animate__fadeIn ">
 			<div className="container d-flex flex-wrap justify-content-around">
 				{loading ? (
 					<span>Loading...</span>
